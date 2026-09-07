@@ -4,3 +4,5 @@ terraform.tfstate
 *.tfplan
 practice-terraform/.terraform
 .terraform.lock.hcl
+terraform_1.16.1_linux_amd64.zip
+terraform.tfvars

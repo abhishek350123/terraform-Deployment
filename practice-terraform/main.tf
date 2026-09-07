@@ -11,7 +11,7 @@ module "vnet" {
   source = "./module/vnet"
 
   vnet_name           = "myVnet"
-  address_space       = ["10.0.0.0/16"]
+  address_space       = ["20.0.0.0/16"]
   location            = module.resource_group.location
   resource_group_name = module.resource_group.resource_group_name
 }
@@ -32,8 +32,8 @@ module "nsg" {
   nsg_name            = "myNSG"
   location            = module.resource_group.location
   resource_group_name = module.resource_group.resource_group_name
-  depends_on          = [module.resource_group]
-}
+#   depends_on          = [module.resource_group]
+ }
 
 # Call the Compute module
 module "compute" {
