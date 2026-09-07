@@ -1,42 +1,18 @@
+# Trigger
+trigger:
 - main
 
+# Agent / VM
 pool:
   vmImage: ubuntu-latest
 
+# Pipeline steps
 steps:
 
-# Install Terraform
+- script: echo "Hello World"
+  displayName: 'Hello World'
+
 - script: |
-    sudo apt-get update
-    sudo apt-get install -y wget unzip
-
-    wget https://releases.hashicorp.com/terraform/1.7.5/terraform_1.7.5_linux_amd64.zip
-    unzip terraform_1.7.5_linux_amd64.zip
-    sudo mv terraform /usr/local/bin/
-
-    terraform version
-  displayName: 'Install Terraform'
-
-
-# Terraform Init
-- script: |
-    terraform init
-  displayName: 'Terraform Init'
-
-
-# Terraform Validate
-- script: |
-    terraform validate
-  displayName: 'Terraform Validate'
-
-
-# Terraform Plan
-- script: |
-    terraform plan
-  displayName: 'Terraform Plan'
-
-
-# Terraform Apply
-- script: |
-    terraform apply -auto-approve
-  displayName: 'Terraform Apply'
+    echo "Step 1"
+    echo "Step 2"
+  displayName: 'Multiple commands'
